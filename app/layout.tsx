@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Sistema Integrado de Gestão",
   description: "MERP, ERP e CRM integrados em uma única plataforma",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -21,9 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={cn(inter.className, "antialiased")}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <PedidoProvider>{children}</PedidoProvider>
+      <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PedidoProvider>
+            {children}
+          </PedidoProvider>
         </ThemeProvider>
       </body>
     </html>

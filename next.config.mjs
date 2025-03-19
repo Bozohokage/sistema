@@ -30,6 +30,9 @@ const nextConfig = {
     }
     return config
   },
+  transpilePackages: ['@radix-ui/react-icons', 'lucide-react'],
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 mergeConfig(nextConfig, userConfig)
